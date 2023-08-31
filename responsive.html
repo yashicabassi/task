@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Webpage </title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: Arial, sans-serif;
+                background-color: skyblue;
+            }
+    
+            header {
+                background-color: skyblue;
+                color: blueviolet;
+                padding: 10px;
+                text-align: center;
+            }
+    
+            nav {
+                background-color: pink;
+                padding: 10px;
+                overflow: hidden;
+            }
+    
+            nav a {
+                float: left;
+                display: block;
+                color: #333;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 18px;
+            }
+    
+            .main {
+                background-color: green;
+                padding: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: stretch;
+            }
+    
+            .main div {
+                background-color: #ddd;
+                padding: 10px;
+                margin: 10px;
+                flex-basis: calc(33.33% - 20px);
+            }
+    
+            @media (max-width: 768px) {
+                nav a {
+                    float: none;
+                    width: 100%;
+                }
+    
+                .main div {
+                    flex-basis: calc(50% - 20px);
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .main div {
+                    flex-basis: 100%;
+                }
+            }
+    
+    
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>RESPONSIVE WEB PAGE</h1>
+        </header>
+        <nav>
+            <a href="#">ARITHMETIC OPERATOR</a>
+            
+        </nav>
+        <section class="main">
+            <div>
+                <h2>SUM</h2>
+                <p>a+b</p>
+            </div>
+            <div>
+                <h2>SUBTRACT</h2>
+                <p>a-b</p>
+            </div>
+            <div>
+                <h2>MULTIPLY</h2>
+                <p>a*b</p>
+            </div>
+            <div>
+                <h2>DIVISION</h2>
+                <p>a/b</p>
+            </div>
+            <div>
+                <h2>MODULUS</h2>
+                <p>a%b</p>
+            </div>
+            
+        </section>
+        
+    </body>
+    </html>
