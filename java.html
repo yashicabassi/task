@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript e</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: pink;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.container {
+			width: 80%;
+			padding: 20px;
+			background-color: lightgoldenrodyellow;
+			border-radius: 10px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+		h2 {
+			color: #333;
+			margin-bottom: 10px;
+		}
+		label {
+			display: inline-block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+		input {
+			padding: 8px;
+			width: 100%;
+			border: 1px solid lightslategray;
+			border-radius: 5px;
+		}
+		button {
+			padding: 8px 15px;
+			background-color: lightseagreen;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			line-height: 1.5;
+		}
+		.result {
+			background-color:white;
+			padding: 10px;
+			border-radius: 5px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>String Methods:</h2>
+		<label for="string-input">Enter a string: </label>
+		<input type="text" id="string-input">
+		<button onclick="showStringMethods()">Show Methods</button>
+		<div class="result" id="string-methods"></div>
+
+		<h2>Number Methods:</h2>
+		<label for="number-input">Enter a number: </label>
+		<input type="number" id="number-input">
+		<button onclick="showNumberMethods()">Show Methods</button>
+		<div class="result" id="number-methods"></div>
+
+		<h2>Array Method:</h2>
+		<label for="array-input">Enter an array (comma-separated): </label>
+		<input type="text" id="array-input">
+		<button onclick="showArrayMethods()">Show Methods</button>
+		<div class="result" id="array-methods"></div>
+
+		<h2>Date Methods:</h2>
+		<button onclick="showDateMethods()">Show Methods</button>
+		<div class="result" id="date-methods"></div>
+
+		<h2>Function Methods:</h2>
+		<button onclick="showFunctionMethods()">Show Methods</button>
+		<div class="result" id="function-methods"></div>
+	</div>
+
+	<script>
+		function showStringMethods() {
+			const str = document.getElementById('string-input').value;
+			document.getElementById('string-methods').innerHTML =
+				'Length: ' + str.length + '<br>' +
+				'Uppercase: ' + str.toUpperCase() + '<br>' +
+				'Lowercase: ' + str.toLowerCase() + '<br>' +
+				'Includes "world": ' + str.includes('world') + '<br>' +
+				'Slice (0, 5): ' + str.slice(0, 5);
+		}
+
+		function showNumberMethods() {
+			const num = parseFloat(document.getElementById('number-input').value);
+			document.getElementById('number-methods').innerHTML =
+				'To Fixed (2): ' + num.toFixed(2) + '<br>' +
+				'To Exponential: ' + num.toExponential() + '<br>' +
+				'To Precision (4): ' + num.toPrecision(4) + '<br>' +
+				'Power of 2: ' + Math.pow(num, 2) + '<br>' +
+				'Square Root: ' + Math.sqrt(num);
+		}
+
+		function showArrayMethods() {
+			const arr = document.getElementById('array-input').value.split(', ');
+			document.getElementById('array-methods').innerHTML =
+				'Length: ' + arr.length + '<br>' +
+				'Join: ' + arr.join(',') + '<br>' +
+				'Push "date": ' + arr.push('date') + '<br>' +
+				'Pop: ' + arr.pop() + '<br>' +
+				'Splice (2, 2): ' + arr.splice(2, 2);
+		}
+
+		function showDateMethods() {
+			const date = new Date();
+			document.getElementById('date-methods').innerHTML =
+				'To String: ' + date.toString() + '<br>' +
+				'UTC String: ' + date.toUTCString() + '<br>' +
+				'Get Month: ' + date.getMonth() + '<br>' +
+				'Get Time: ' + date.getTime() + '<br>' +
+				'Get Day: ' + date.getDay();
+		}
+
+		function myFunction() {
+			return "Hello, world!";
+		}
+
+		function showFunctionMethods() {
+			document.getElementById('function-methods').innerHTML =
+				'Return Value: ' + myFunction() + '<br>' +
+				'Function Name: ' + myFunction.name;
+		}
+	</script>
+</body>
+</html>
